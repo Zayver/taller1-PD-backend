@@ -47,7 +47,6 @@ public class FileSystemService {
         try(val files = Files.walk(path)) {
             files.filter(Files::isRegularFile)
                     .forEach(file -> {
-                System.out.println(file);
                 try {
                     val string = Files.readString(file);
                     result.add(reader.readFile(string));
